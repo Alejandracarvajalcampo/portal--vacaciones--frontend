@@ -1,1 +1,129 @@
-<p>register-employees works!</p>
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Registro de empleados</h3>
+  <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <div class="form-group">
+      <label>Nombres</label>
+      <input type="text" class="form-control" id="Nombres" [(ngModel)]="employee.names" name="Nombres" required
+        minlength="4" maxlength="20" placeholder="Digite su nombre" #Nombres="ngModel">
+      <div class="alert alert-danger" *ngIf="Nombres.invalid && (Nombres.dirty || Nombres.touched)">
+        <!-- Mensaje de error -->
+        <p *ngIf="Nombres.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Nombres.errors?.['minlength']">El nombre debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Nombres.errors?.['maxlength']">El nombre debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Apellidos</label>
+      <input type="text" class="form-control" id="Apellidos" [(ngModel)]="employee.surnames" name="Apellidos" required
+        minlength="4" maxlength="20" placeholder="Digite su apellido" #Apellidos="ngModel">
+      <div class="alert alert-danger" *ngIf="Apellidos.invalid && (Apellidos.dirty || Apellidos.touched)">
+        <p *ngIf="Apellidos.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Apellidos.errors?.['minlength']">El apellido debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Apellidos.errors?.['maxlength']">El apellido debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Tipo de documento</label>
+      <input type="text" class="form-control" id="Tipo de documento" [(ngModel)]="employee.documentType"
+        name="Tipo de documento" required minlength="4" maxlength="20" placeholder="Digite su tipo de documento"
+        #Tipo_de_documento="ngModel">
+      <div class="alert alert-danger" *ngIf="Tipo_de_documento.invalid && (Tipo_de_documento.dirty || Tipo_de_documento.touched)">
+        <p *ngIf="Tipo_de_documento.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Tipo_de_documento.errors?.['minlength']">El tipo de documento debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Tipo_de_documento.errors?.['maxlength']">El tipo de documento debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Numero de documento</label>
+      <input type="number" class="form-control" id="Numero de documento" [(ngModel)]="employee.document"
+        name="Numero de documento" required minlength="4" maxlength="20" placeholder="Digite su numero de documento"
+        #Numero_de_documento="ngModel">
+      <div class="alert alert-danger" *ngIf="Numero_de_documento.invalid && (Numero_de_documento.dirty || Numero_de_documento.touched)">
+        <p *ngIf="Numero_de_documento.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Numero_de_documento.errors?.['minlength']">El número de documento debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Numero_de_documento.errors?.['maxlength']">El número de documento debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Telefono</label>
+      <input type="string" class="form-control" id="Telefono" [(ngModel)]="employee.phone" name="Telefono" required
+        minlength="4" maxlength="20" placeholder="Digite su telefono" #Telefono="ngModel">
+      <div class="alert alert-danger" *ngIf="Telefono.invalid && (Telefono.dirty || Telefono.touched)">
+        <p *ngIf="Telefono.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Telefono.errors?.['minlength']">El teléfono debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Telefono.errors?.['maxlength']">El teléfono debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Direccion</label>
+      <input type="text" class="form-control" id="Direccion" [(ngModel)]="employee.address" name="Direccion" required
+        minlength="4" maxlength="20" placeholder="Digite su direccion" #Direccion="ngModel">
+      <div class="alert alert-danger" *ngIf="Direccion.invalid && (Direccion.dirty || Direccion.touched)">
+        <p *ngIf="Direccion.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Direccion.errors?.['minlength']">La dirección debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Direccion.errors?.['maxlength']">La dirección debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Tipo de contrato</label>
+      <input type="text" class="form-control" id="Tipo de contrato" [(ngModel)]="employee.typeContract"
+        name="Tipo de contrato" required minlength="4" maxlength="20" placeholder="Digite su tipo de contrato"
+        #Tipo_de_contrato="ngModel">
+      <div class="alert alert-danger" *ngIf="Tipo_de_contrato.invalid && (Tipo_de_contrato.dirty || Tipo_de_contrato.touched)">
+        <p *ngIf="Tipo_de_contrato.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Tipo_de_contrato.errors?.['minlength']">El tipo de contrato debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Tipo_de_contrato.errors?.['maxlength']">El tipo de contrato debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Fecha de ingreso</label>
+      <input type="text" class="form-control" id="Fecha de ingreso" [(ngModel)]="employee.admissionDate"
+        name="Fecha de ingreso" required minlength="4" maxlength="20" placeholder="Digite la fecha de ingreso"
+        #Fecha_de_ingreso="ngModel">
+      <div class="alert alert-danger" *ngIf="Fecha_de_ingreso.invalid && (Fecha_de_ingreso.dirty || Fecha_de_ingreso.touched)">
+        <p *ngIf="Fecha_de_ingreso.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="Fecha_de_ingreso.errors?.['minlength']">La fecha de ingreso debe tener al menos 4 caracteres.</p>
+        <p *ngIf="Fecha_de_ingreso.errors?.['maxlength']">La fecha de ingreso debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+        <div class="form-group">
+          <label>Estado</label>
+          <input type="text" class="form-control" id="Estado" [(ngModel)]="employee.state" name="Estado" required
+            minlength="4" maxlength="20" placeholder="Digite el estado del empleado" #Estado="ngModel">
+          <div class="alert alert-danger" *ngIf="Estado.invalid && (Estado.dirty || Estado.touched)">
+            <p *ngIf="Estado.errors?.['required']">El campo es requerido.</p>
+            <p *ngIf="Estado.errors?.['minlength']">El estado debe tener al menos 4 caracteres.</p>
+            <p *ngIf="Estado.errors?.['maxlength']">El estado debe tener como máximo 20 caracteres.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Cargo</label>
+          <input type="text" class="form-control" id="Cargo" [(ngModel)]="employee.charge" name="Cargo" required
+            minlength="4" maxlength="20" placeholder="Digite el cargo del empleado" #Cargo="ngModel">
+          <div class="alert alert-danger" *ngIf="Cargo.invalid && (Cargo.dirty || Cargo.touched)">
+            <p *ngIf="Cargo.errors?.['required']">El campo es requerido.</p>
+            <p *ngIf="Cargo.errors?.['minlength']">El cargo debe tener al menos 4 caracteres.</p>
+            <p *ngIf="Cargo.errors?.['maxlength']">El cargo debe tener como máximo 20 caracteres.</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Supervisor</label>
+          <input type="text" class="form-control" id="Supervisor" [(ngModel)]="employee.supervisor" name="Supervisor"
+            required minlength="4" maxlength="20" placeholder="Digite el supervisor" #Supervisor="ngModel">
+          <div class="alert alert-danger" *ngIf="Supervisor.invalid && (Supervisor.dirty || Supervisor.touched)">
+            <p *ngIf="Supervisor.errors?.['required']">El campo es requerido.</p>
+            <p *ngIf="Supervisor.errors?.['minlength']">El supervisor debe tener al menos 4 caracteres.</p>
+            <p *ngIf="Supervisor.errors?.['maxlength']">El supervisor debe tener como máximo 20 caracteres.</p>
+          </div>
+        </div>
+
+        <button class="btn btn-success" [disabled]="!employeeForm.form.valid">Guardar</button>
+      </form>
+    </div>
