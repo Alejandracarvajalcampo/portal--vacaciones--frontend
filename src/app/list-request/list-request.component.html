@@ -1,0 +1,30 @@
+<h2>Lista de solicitudes de vacaciones </h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Fecha</th>
+      <th>Documento</th>
+      <th>Tipo de solicitud</th>
+      <th>Total dias</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vacationRequest of vacationRequests">
+      <td>{{vacationRequest.date}}</td>
+      <td>{{vacationRequest.document}}</td>
+      <td>{{vacationRequest.requestType}}</td>
+      <td>{{vacationRequest.days}}</td>
+      <td>{{vacationRequest.startDate}}</td>
+      <td>{{vacationRequest.endDate}}</td>
+      <td>{{vacationRequest.state}}</td>
+
+      <td>
+        <button (click)="deleteRequest(vacationRequest.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+

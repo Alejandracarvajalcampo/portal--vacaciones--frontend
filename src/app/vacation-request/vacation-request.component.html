@@ -1,0 +1,84 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Crear solicitud</h3>
+  <form (ngSubmit)="onSubmit()" #vacationRequestForm="ngForm">
+    <div class="form-group">
+      <label>Ingrese su numero de documento</label>
+      <input type="text" class="form-control" id="solicitud" [(ngModel)]="vacationRequest.document" name="solicitud" required
+        minlength="4" maxlength="20" placeholder="Digite su documento" #solicitud="ngModel">
+      <div class="alert alert-danger" *ngIf="solicitud.invalid && (solicitud.dirty || solicitud.touched)">
+        <!-- Mensaje de error -->
+        <p *ngIf="solicitud.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="solicitud.errors?.['minlength']">El nombre debe tener al menos 4 caracteres.</p>
+        <p *ngIf="solicitud.errors?.['maxlength']">El nombre debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Tipo de solicitud</label>
+      <input type="text" class="form-control" id="solicitud" [(ngModel)]="vacationRequest.requestType" name="solicitud" required
+        minlength="4" maxlength="20" placeholder="Digite su el tipo de solicitud" #solicitud="ngModel">
+      <div class="alert alert-danger" *ngIf="solicitud.invalid && (solicitud.dirty || solicitud.touched)">
+        <!-- Mensaje de error -->
+        <p *ngIf="solicitud.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="solicitud.errors?.['minlength']">El nombre debe tener al menos 4 caracteres.</p>
+        <p *ngIf="solicitud.errors?.['maxlength']">El nombre debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Fecha de inicio</label>
+      <input type="text" class="form-control" id="inicio" [(ngModel)]="vacationRequest.startDate" name="inicio" required
+        minlength="4" maxlength="20" placeholder="Digite la fecha de inicio de sus vacaciones " #inicio="ngModel">
+      <div class="alert alert-danger" *ngIf="inicio.invalid && (inicio.dirty || inicio.touched)">
+        <p *ngIf="inicio.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="inicio.errors?.['minlength']">El apellido debe tener al menos 4 caracteres.</p>
+        <p *ngIf="inicio.errors?.['maxlength']">El apellido debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Fecha final</label>
+      <input type="text" class="form-control" id="final" [(ngModel)]="vacationRequest.endDate"
+        name="final" required minlength="4" maxlength="20" placeholder="Digite la fecha final de su toma de vacaciones"
+        #final="ngModel">
+      <div class="alert alert-danger" *ngIf="final.invalid && (final.dirty || final.touched)">
+        <p *ngIf="final.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="final.errors?.['minlength']">El tipo de documento debe tener al menos 4 caracteres.</p>
+        <p *ngIf="final.errors?.['maxlength']">El tipo de documento debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Dias</label>
+      <input type="number" class="form-control" id="dias" [(ngModel)]="vacationRequest.days"
+        name="dias" required minlength="4" maxlength="20" placeholder="Digite los dias a tomar"
+        #dias="ngModel">
+      <div class="alert alert-danger" *ngIf="dias.invalid && (dias.dirty || dias.touched)">
+        <p *ngIf="dias.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="dias.errors?.['minlength']">El número de documento debe tener al menos 4 caracteres.</p>
+        <p *ngIf="dias.errors?.['maxlength']">El número de documento debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Fecha contratacion</label>
+      <input type="text" class="form-control" id="final" [(ngModel)]="vacationRequest.hireDate"
+        name="final" required minlength="4" maxlength="20" placeholder="Digite la fecha final de su toma de vacaciones"
+        #final="ngModel">
+      <div class="alert alert-danger" *ngIf="final.invalid && (final.dirty || final.touched)">
+        <p *ngIf="final.errors?.['required']">El campo es requerido.</p>
+        <p *ngIf="final.errors?.['minlength']">El tipo de documento debe tener al menos 4 caracteres.</p>
+        <p *ngIf="final.errors?.['maxlength']">El tipo de documento debe tener como máximo 20 caracteres.</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Estado</label>
+      <select class="form-control" id="final" [(ngModel)]="vacationRequest.state" name="Estado" required>
+        <option value="">Selecciona un estado</option>
+        <option value="pendiente">Pendiente</option>
+
+      </select>
+      <div class="alert alert-danger" *ngIf="final.invalid && (final.dirty || final.touched)">
+        <p *ngIf="final.errors?.['required']">El campo es requerido.</p>
+      </div>
+    </div>
+        <button class="btn btn-success" [disabled]="!vacationRequestForm.form.valid">Crear solicitud</button>
+      </form>
+    </div>
