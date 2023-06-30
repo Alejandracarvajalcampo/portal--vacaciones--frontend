@@ -1,0 +1,23 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+/* Estilos para los detalles del empleado */
+h3 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
