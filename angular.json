@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portal--vacaciones--frontend": {
+    "gestion-vacaciones-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portal--vacaciones--frontend",
+            "outputPath": "dist/gestion-vacaciones-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "portal--vacaciones--frontend:build:production"
+              "browserTarget": "gestion-vacaciones-frontend:build:production"
             },
             "development": {
-              "browserTarget": "portal--vacaciones--frontend:build:development"
+              "browserTarget": "gestion-vacaciones-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portal--vacaciones--frontend:build"
+            "browserTarget": "gestion-vacaciones-frontend:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "fe529eef-0627-4ae5-9a7f-4854d58c3a3d"
+    "analytics": "a02642c7-2609-434a-a4b8-bf48ff0aa388"
   }
 }
