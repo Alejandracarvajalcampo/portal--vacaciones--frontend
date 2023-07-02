@@ -10,13 +10,12 @@ import { ListRequestComponent } from './list-request/list-request.component';
 
 const routes: Routes = [
   {path: 'vacationRequests', component:ListRequestComponent},
-  {path: '',redirectTo:'vacationRequests',pathMatch:'full'},
+  {path: 'vacation-request', component:VacationRequestComponent},
   {path: 'employees', component:ListEmployeeComponent},
   {path: '',redirectTo:'employees',pathMatch:'full'},
   {path: 'register-employees', component:RegisterEmployeesComponent},
   {path: 'update-employee/:id', component:UpdateEmployeeComponent},
   {path: 'details-employee/:document', component:DetailsEmployeeComponent},
-  {path: 'vacation-request', component:VacationRequestComponent},
 
 
 

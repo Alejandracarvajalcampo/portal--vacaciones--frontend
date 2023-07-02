@@ -1,30 +1,35 @@
-<h2>Lista de empleados </h2>
+<h2>Lista de empleados</h2>
+
+<input  class="filter-names" type="text" [(ngModel)]="searchInput" placeholder="Buscar empleado">
+
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
-      <th>nombres</th>
-      <th>apellidos</th>
-      <th>cargo</th>
-      <th>estado</th>
-      <th>supervisor</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Documento</th>
+      <th>Fecha ingreso</th>
+      <th>Cargo</th>
+      <th>Estado</th>
+      <th>Supervisor</th>
+      <th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employees">
-      <td>{{employee.names}}</td>
-      <td>{{employee.surnames}}</td>
-      <td>{{employee.charge}}</td>
-      <td>{{employee.state}}</td>
-      <td>{{employee.supervisor}}</td>
+    <tr *ngFor="let employee of employees | filter: searchInput" class="employee-row">
+      <td>{{ employee.names }}</td>
+      <td>{{ employee.surnames }}</td>
+      <td>{{ employee.document }}</td>
+      <td>{{ employee.admissionDate }}</td>
+      <td>{{ employee.charge }}</td>
+      <td>{{ employee.state }}</td>
+      <td>{{ employee.supervisor }}</td>
       <td>
         <button (click)="updateEmployee(employee.id)" class="btn btn-info">Editar</button>
-        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 10px;">Eliminar</button>
-        <button (click)="detailsEmployee(employee.document)" class="btn btn-primary" style="margin-left: 10px;">Detalles</button>
+        <button (click)="deleteEmployee(employee.id)" class="btn btn-danger">Eliminar</button>
+        <button (click)="detailsEmployee(employee.document)" class="btn btn-primary" >Detalles</button>
       </td>
     </tr>
   </tbody>
 </table>
-
-
-
 

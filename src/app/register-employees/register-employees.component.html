@@ -81,7 +81,7 @@
 
     <div class="form-group">
       <label>Fecha de ingreso</label>
-      <input type="text" class="form-control" id="Fecha de ingreso" [(ngModel)]="employee.admissionDate"
+      <input type="date" class="form-control" id="Fecha de ingreso" [(ngModel)]="employee.admissionDate"
         name="Fecha de ingreso" required minlength="4" maxlength="20" placeholder="Digite la fecha de ingreso"
         #Fecha_de_ingreso="ngModel">
       <div class="alert alert-danger" *ngIf="Fecha_de_ingreso.invalid && (Fecha_de_ingreso.dirty || Fecha_de_ingreso.touched)">

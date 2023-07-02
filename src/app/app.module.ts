@@ -11,6 +11,8 @@ import { ListEmployeeComponent } from './list-employee/list-employee.component';
 import { DetailsEmployeeComponent } from './details-employee/details-employee.component';
 import { ListRequestComponent } from './list-request/list-request.component';
 import { VacationRequestComponent } from './vacation-request/vacation-request.component';
+import { FilterPipe } from './filter.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,13 +22,17 @@ import { VacationRequestComponent } from './vacation-request/vacation-request.co
     ListEmployeeComponent,
     DetailsEmployeeComponent,
     ListRequestComponent,
-    VacationRequestComponent
+    VacationRequestComponent,
+    FilterPipe,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

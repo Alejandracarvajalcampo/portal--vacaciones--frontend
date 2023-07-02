@@ -3,18 +3,17 @@
   <thead class="table-dark">
     <tr>
       <th>Fecha</th>
-      <th>Documento</th>
       <th>Tipo de solicitud</th>
       <th>Total dias</th>
       <th>Inicio</th>
       <th>Fin</th>
       <th>Estado</th>
+      <th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let vacationRequest of vacationRequests">
       <td>{{vacationRequest.date}}</td>
-      <td>{{vacationRequest.document}}</td>
       <td>{{vacationRequest.requestType}}</td>
       <td>{{vacationRequest.days}}</td>
       <td>{{vacationRequest.startDate}}</td>
@@ -27,4 +26,5 @@
     </tr>
   </tbody>
 </table>
+
 

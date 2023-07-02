@@ -28,7 +28,7 @@ export class VacationRequestComponent implements OnInit {
   }
 
   goToVacationList(){
-  this.router.navigate(['vacation-request']);
+  this.router.navigate(['vacationRequests']);
   }
 
   onSubmit(){

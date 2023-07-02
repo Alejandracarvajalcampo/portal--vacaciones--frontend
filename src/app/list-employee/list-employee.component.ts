@@ -12,6 +12,7 @@ import swal from 'sweetalert2';
 export class ListEmployeeComponent implements OnInit {
 
   employees: Employee [];
+  searchInput: string = '';
 
 
   constructor(
@@ -23,6 +24,7 @@ export class ListEmployeeComponent implements OnInit {
     this.getEmployee();
 
     }
+
 
     updateEmployee(id:number){
       this.router.navigate(['update-employee',id]);

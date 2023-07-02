@@ -1,0 +1,36 @@
+
+    body {
+      background-color: red;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: darkblue;
+      color: white;
+    }
+
+    .navbar-nav .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: blue;
+      background-color:rosybrown;
+    }
+
+    h1.text-center {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      background-color: darkblue;
+    }
+
+    .container {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border: 1px solid black;
+    }
+

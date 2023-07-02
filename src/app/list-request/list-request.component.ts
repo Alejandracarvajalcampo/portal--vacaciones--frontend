@@ -25,6 +25,7 @@ export class ListRequestComponent implements OnInit {
 
     }
 
+
     private getRequest(){
       this.vacationRequestService.getRequestList().subscribe(dato => {
         this.vacationRequests = dato;
