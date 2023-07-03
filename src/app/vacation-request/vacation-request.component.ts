@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VacationRequest } from '../vacation-request';
 import { VacationRequestService } from '../vacation-request.service';
 import { Router } from '@angular/router';
@@ -9,33 +9,35 @@ import { Router } from '@angular/router';
   styleUrls: ['./vacation-request.component.css']
 })
 export class VacationRequestComponent implements OnInit {
+  vacationRequest: VacationRequest = new VacationRequest();
+  errorMessage: string | null = null;
 
-  vacationRequest :VacationRequest = new VacationRequest();
+  constructor(
+    private vacationRequestService: VacationRequestService,
+    private router: Router
+  ) {}
 
-  constructor(private vacationRequestService:VacationRequestService, private router:Router){
+  ngOnInit(): void {}
 
+  saveVacationRequest() {
+    this.vacationRequestService
+      .registerVacationRequest(this.vacationRequest)
+      .subscribe(
+        dato => {
+          console.log(dato);
+          this.goToVacationList();
+        },
+        error => {
+          this.errorMessage = error.error;
+        }
+      );
   }
 
-  ngOnInit(): void {
+  goToVacationList() {
+    this.router.navigate(['vacationRequests']);
   }
 
-  saveVacationRequest(){
-    this.vacationRequestService.registerVacationRequest(this.vacationRequest).subscribe(dato =>{
-      console.log(dato);
-      this.goToVacationList();
-    },error => console.log(error))
-
-  }
-
-  goToVacationList(){
-  this.router.navigate(['vacationRequests']);
-  }
-
-  onSubmit(){
+  onSubmit() {
     this.saveVacationRequest();
   }
-
 }
-
-
-

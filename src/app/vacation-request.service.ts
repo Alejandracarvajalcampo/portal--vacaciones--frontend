@@ -14,16 +14,8 @@ export class VacationRequestService {
 s
 
 registerVacationRequest(vacationRequest: VacationRequest): Observable<any> {
-  return this.httpClient.post(`${this.baseUrl}create/`, vacationRequest)
-    .pipe(
-      catchError((error: HttpErrorResponse) => {
-        if (error.status === 400 && error.error === 'Se deben solicitar al menos 6 días hábiles consecutivos.') {
-          throw new Error('Error: Se deben solicitar al menos 6 días hábiles consecutivos.');
-        } else {
-          throw new Error('Error en la solicitud.');
-        }
-      })
-    );
+  return this.httpClient.post(`${this.baseUrl}create/`, vacationRequest);
+
 }
    getRequestList():Observable<VacationRequest[]>{
     return this.httpClient.get<VacationRequest[]>(`${this.baseUrl}list/`);
